@@ -2,6 +2,9 @@ import React from 'react';
 import {MasterLayout} from 'layouts';
 
 class HomePage extends React.Component {
+  gotoPage(page) {
+    this.props.history.push(page);
+  }
 
   render() {
     return (
@@ -16,7 +19,7 @@ class HomePage extends React.Component {
             <div className="tab">
               <ul className="box-tab">
                 <li className="sub-tab">
-                  <button className="btn-tab search">
+                  <button className="btn-tab search" onClick={this.gotoPage.bind(this, '/search-file')}>
                     <span className="icon-tab">
                       <img className="resize-search center" src={require('assets/images/icon/search.svg')} />
                     </span>
@@ -26,7 +29,7 @@ class HomePage extends React.Component {
                   </button>
                 </li>
                 <li className="sub-tab">
-                  <button className="btn-tab calendar">
+                  <button className="btn-tab calendar" onClick={this.gotoPage.bind(this, '/calendar')}>
                     <span className="icon-tab">
                       <img className="resize-calendar center" src={require('assets/images/icon/calendar.svg')} />
                     </span>
@@ -36,7 +39,7 @@ class HomePage extends React.Component {
                   </button>
                 </li>
                 <li className="sub-tab">
-                  <button className="btn-tab document">
+                  <button className="btn-tab document" onClick={this.gotoPage.bind(this, '/document')}>
                     <span className="icon-tab">
                       <img className="resize-document center" src={require('assets/images/icon/document.svg')} />
                     </span>
@@ -46,7 +49,7 @@ class HomePage extends React.Component {
                   </button>
                 </li>
                 <li className="sub-tab">
-                  <button className="btn-tab procedure">
+                  <button className="btn-tab procedure" onClick={this.gotoPage.bind(this, '/find-procedure')}>
                     <span className="icon-tab">
                       <img className="resize-procedure center" src={require('assets/images/icon/document_1.svg')} />
                     </span>
@@ -56,7 +59,7 @@ class HomePage extends React.Component {
                   </button>
                 </li>
                 <li className="sub-tab">
-                  <button className="btn-tab notable">
+                  <button className="btn-tab notable" onClick={this.gotoPage.bind(this, '/rating-list')}>
                     <span className="icon-tab">
                       <img className="resize-notable center" src={require('assets/images/icon/rate.svg')} />
                     </span>
@@ -66,7 +69,7 @@ class HomePage extends React.Component {
                   </button>
                 </li>
                 <li className="sub-tab">
-                  <button className="btn-tab feedback">
+                  <button className="btn-tab feedback" onClick={this.gotoPage.bind(this, '/feedback')}>
                     <span className="icon-tab">
                       <img className="resize-feedback center" src={require('assets/images/icon/feedback.svg')} />
                     </span>

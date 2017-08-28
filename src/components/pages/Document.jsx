@@ -2,6 +2,46 @@ import React, { Component } from 'react';
 import {CommonLayout} from 'layouts';
 
 class Document extends Component {
+  constructor(props, context) {
+    super(props, context);
+
+    this.state = {
+      categories: [
+        { title: 'Tài liệu Công đoàn quận Thanh Khê' },
+        { title: 'Bộ TTHC lĩnh vực Kho bạc Nhà nước' },
+        { title: 'Biểu mẫu đăng ký báo cáo thành tích' },
+        { title: 'Văn bản thi đua' },
+        { title: 'Tài liệu Công đoàn quận Thanh Khê' },
+        { title: 'Bộ TTHC lĩnh vực Kho bạc Nhà nước' },
+        { title: 'Biểu mẫu đăng ký báo cáo thành tích' },
+        { title: 'Cấp phép tổ chức hoạt động dạy thêm học thêm, cấp phép dạy thêm cho cá nhân' }
+      ],
+      documents: [
+        { title: 'Thông tư 40/2016/TT-BTC của Bộ Tài chính' },
+        { title: 'Thông tin về khoản thu phí' },
+        { title: 'Quy trình TTVDT và vốn sự nghiệp mới ban hành cuối năm 2016' },
+        { title: 'Nội dung thực hiện kiến nghị, phản ánh của cá nhân, tổ chức' },
+        { title: 'Thông tư 39/2016/TT-BTC của Bộ Tài chính' },
+        { title: 'Nội dung TTHC Kho bạc Nhà nước' },
+        { title: 'Danh mục công khai niêm yết xử phạt VPHC' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' },
+        { title: 'Thủ tục đăng ký khai sinh có yếu tố nước ngoài' }
+      ]
+    }
+  }
+
+  gotoProcedureDetail(xxx) {
+    this.props.history.push('/procedure-detail');
+  }
+
   render() {
     return (
       <CommonLayout>
@@ -22,46 +62,18 @@ class Document extends Component {
               </h2>
               <div className="box-list-scroll resize-box-document">
                 <ul className="list-document">
-                  <li className="sub-list-document">
-                    <p className="text-document">
-                      Tài liệu Công đoàn quận Thanh Khê
-                    </p>
-                  </li>
-                  <li className="sub-list-document text-active">
-                    <p className="text-document">
-                      Bộ TTHC lĩnh vực Kho bạc Nhà nước
-                    </p>
-                  </li>
-                  <li className="sub-list-document">
-                    <p className="text-document">
-                      Biểu mẫu đăng ký báo cáo thành tích
-                    </p>
-                  </li>
-                  <li className="sub-list-document">
-                    <p className="text-document">
-                      Văn bản thi đua
-                    </p>
-                  </li>
-                  <li className="sub-list-document">
-                    <p className="text-document">
-                      Tài liệu Công đoàn quận Thanh Khê
-                    </p>
-                  </li>
-                  <li className="sub-list-document">
-                    <p className="text-document">
-                      Bộ TTHC lĩnh vực Kho bạc Nhà nước
-                    </p>
-                  </li>
-                  <li className="sub-list-document">
-                    <p className="text-document">
-                      Biểu mẫu đăng ký báo cáo thành tích
-                    </p>
-                  </li>
-                  <li className="sub-list-document">
-                    <p className="text-document">
-                      Cấp phép tổ chức hoạt động dạy thêm học thêm, cấp phép dạy thêm cho cá nhân
-                    </p>
-                  </li>
+                  {
+                    this.state.categories.map((item, i) => {
+                      return (
+                        <li key={i} className="sub-list-document">
+                          <p className="text-document">
+                            {item.title}
+                          </p>
+                        </li>
+                      )
+                    })
+                  }
+
                 </ul>
               </div>
             </div>
@@ -71,57 +83,17 @@ class Document extends Component {
               </h2>
               <div className="box-detail-scroll resize-box-document">
                 <ul className="list-detail-document">
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thông tư 40/2016/TT-BTC của Bộ Tài chính</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thông tin về khoản thu phí</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Quy trình TTVDT và vốn sự nghiệp mới ban hành cuối năm 2016</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Nội dung thực hiện kiến nghị, phản ánh của cá nhân, tổ chức</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thông tư 39/2016/TT-BTC của Bộ Tài chính</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Nội dung TTHC Kho bạc Nhà nước</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Danh mục công khai niêm yết xử phạt VPHC</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
-                  <li className="sub-detail-document">
-                    <p className="text-detail-document">Thủ tục đăng ký khai sinh có yếu tố nước ngoài</p>
-                  </li>
+                  {
+                    this.state.documents.map((item, i) => {
+                      return (
+                        <li className="sub-detail-document" onClick={this.gotoProcedureDetail.bind(this, 'xxx')}>
+                          <p className="text-detail-document">{item.title}</p>
+                        </li>
+                      )
+                    })
+                  }
+
+
                 </ul>
               </div>
             </div>

@@ -15,11 +15,11 @@ const RenderRoutes = ({routes, auth}) => {
     <ConnectedSwitch>
       {routes.map((route, i) => (
 
-        <Route key={i} path={route.path} exact={route.exact} strict={route.strict} render={({match, location, history, staticContext, ...props}) => (
+        <Route key={i} path={route.path} exact={route.exact} render={(props) => (
           <div>
 
             {
-              <route.component {...props} routes={route.routes}/>
+              <route.component {...props} route={route} routes={route.routes}/>
             }
           </div>
         )}/>

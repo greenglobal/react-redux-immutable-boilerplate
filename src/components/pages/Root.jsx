@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { RenderRoutes } from 'base/routes';
-import { Router } from 'react-router';
+import { HashRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 const Root = ({ store, routes, history }) => (
   <Provider store={store}>
-    <Router history={history}>
+    <Router>
       <RenderRoutes routes={routes} />
     </Router>
   </Provider>

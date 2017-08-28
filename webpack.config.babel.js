@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const config = require('./src/constants/config');
 
@@ -173,9 +174,9 @@ module.exports = function (env) {
         ],
       },
       output: {
-        path: path.join(__dirname, 'build'),
+        path: path.join(__dirname, '../build'),
         filename: 'bundle.js',
-        publicPath: '/'
+        publicPath: ''
       },
       module: _module,
       plugins: plugins.concat(
@@ -184,7 +185,12 @@ module.exports = function (env) {
           minify: {
             collapseWhitespace: true
           }
-        })
+        }),
+        new CopyWebpackPlugin([
+          {
+            from: './lib-pdf/**/*'
+          }
+        ])
       ),
       performance: isProd && {
         //maxAssetSize: 100,

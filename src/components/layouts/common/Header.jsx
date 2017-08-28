@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link} from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props, context) {
@@ -11,9 +11,9 @@ class Header extends React.Component {
       <header className="box-header">
         <div className="container">
           <h1 className="logo">
-            <a className="link-logo">
+            <Link className="link-logo" to='/'>
               <img className="img-logo" src={require('assets/images/logo/Logo.png')} />
-            </a>
+            </Link>
           </h1>
           <div className="text-logo">
             <span className="text-title-logo">UBND QUẬN THANH KHÊ</span>

@@ -1,8 +1,8 @@
 import React from 'react';
 import {RenderRoutes} from 'base/routes';
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props, context) {
+    super(props, context);
     this.state = {
       count: 0,
     };
@@ -16,4 +16,9 @@ class App extends React.Component {
     );
   }
 }
+
+App.contextTypes = {
+  router: React.PropTypes.object
+};
+
 export default App;
