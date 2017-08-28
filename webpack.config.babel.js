@@ -16,7 +16,28 @@ var _module = {
   rules: [
     {
       test: /\.(ico|jpg|jpeg|png|gif|eot|ttf|woff|svg)/,
-      loader: 'file-loader'
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: 'images/[hash].[name].[ext]'
+          }
+        },
+        {
+          loader: 'image-webpack-loader',
+          options: {
+            bypassOnDebug: true,
+            // optimizationLevel: 7,
+
+            optipng: {
+              optimizationLevel: 7
+            },
+            gifsicle: {
+              interlaced: false,
+            }
+          }
+        }
+      ]
     }, {
       test: /\.(js|jsx)$/,
       exclude: /(node_modules)/,
@@ -47,7 +68,6 @@ var resolve = {
     'base': path.resolve(__dirname, './src/'),
     'components': path.resolve(__dirname, './src/components/'),
     'assets': path.resolve(__dirname, './src/assets/'),
-    'global_styles': path.resolve(__dirname, './src/assets/styles/'),
     'constants': path.resolve(__dirname, './src/constants'),
     'api': path.resolve(__dirname, './src/api/'),
     'app': path.resolve(__dirname, './src/components/app'),
@@ -146,7 +166,9 @@ module.exports = function (env) {
       entry: {
         app: [
           'babel-polyfill',
-          './src/assets/styles/main.css',
+          'assets/css/reset.css',
+          'assets/css/fonts.css',
+          'assets/css/styles.css',
           './src/index.js'
         ],
       },
@@ -159,7 +181,6 @@ module.exports = function (env) {
       plugins: plugins.concat(
         new HtmlWebpackPlugin({
           template: path.resolve('./src/', 'index.html'),
-          favicon: path.resolve('./src/', 'assets/images/favicon.ico'),
           minify: {
             collapseWhitespace: true
           }
@@ -192,39 +213,6 @@ module.exports = function (env) {
         contentBase: './',
         historyApiFallback: true
       }
-    },
-    {
-      devtool: devtool,
-      context: sourcePath,
-      name: "server-side rendering",
-      entry: {
-        app: [
-          'babel-polyfill',
-          './src/assets/styles/main.css',
-          './src/server.js'
-        ],
-      },
-      target: "node",
-      output: {
-        path: path.join(__dirname, 'build'),
-        filename: 'bundle.server.js',
-        publicPath: '/',
-        libraryTarget: "commonjs2"
-      },
-      module: _module,
-      plugins: plugins,
-      performance: isProd && {
-        //maxAssetSize: 100,
-        //maxEntrypointSize: 300,
-        hints: 'warning'
-      },
-      stats: {
-        colors: {
-          green: '\u001b[32m'
-        }
-      },
-      resolve: resolve
-      //devtool: ENV === 'production' ? 'source-map' : 'source-map'
     }
   ];
 }

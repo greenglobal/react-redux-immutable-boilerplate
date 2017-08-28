@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="78px" height="100px" viewBox="0 0 78 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>test</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="01.01.-Màn-hình-chính" transform="translate(-161.000000, -576.000000)">
+            <g id="test" transform="translate(161.000000, 576.000000)">
+                <g id="Layer_1">
+                    <polygon id="Shape" fill="#FCFCFD" points="56.4716512 0.096124031 0.0293449612 0.096124031 0.0293449612 99.9780362 77.6927326 99.9780362 77.6927326 21.124031"></polygon>
+                    <polygon id="Shape" fill="#C7C7C7" points="56.4716512 21.124031 77.6927326 21.124031 56.4716512 0.096124031"></polygon>
+                    <path d="M24.7723411,40.9250646 L9.1867907,40.9250646 L9.1867907,25.4170543 L24.7723411,25.4170543 L24.7723411,40.9250646 L24.7723411,40.9250646 Z M12.0044264,38.121447 L21.9544457,38.121447 L21.9544457,28.2209302 L12.0044264,28.2209302 L12.0044264,38.121447 L12.0044264,38.121447 Z" id="Shape" fill="#6EB1E1"></path>
+                    <g id="Group" transform="translate(31.162791, 26.614987)" fill="#F1F3F7">
+                        <rect id="Rectangle-path" x="0.0373953488" y="0.0286821705" width="37.3348411" height="3.67984496"></rect>
+                        <rect id="Rectangle-path" x="0.0373953488" y="9.40361757" width="27.3848217" height="3.67984496"></rect>
+                    </g>
+                    <path d="M24.7723411,66.4211886 L9.1867907,66.4211886 L9.1867907,50.9131783 L24.7723411,50.9131783 L24.7723411,66.4211886 L24.7723411,66.4211886 Z M12.0044264,63.6175711 L21.9544457,63.6175711 L21.9544457,53.7170543 L12.0044264,53.7170543 L12.0044264,63.6175711 L12.0044264,63.6175711 Z" id="Shape" fill="#6EB1E1"></path>
+                    <g id="Group" transform="translate(31.162791, 51.937984)" fill="#F1F3F7">
+                        <rect id="Rectangle-path" x="0.0373953488" y="0.201808786" width="37.3348411" height="3.67984496"></rect>
+                        <rect id="Rectangle-path" x="0.0373953488" y="9.57674419" width="27.3848217" height="3.67984496"></rect>
+                    </g>
+                    <path d="M24.7723411,91.9175711 L9.1867907,91.9175711 L9.1867907,76.4095607 L24.7723411,76.4095607 L24.7723411,91.9175711 L24.7723411,91.9175711 Z M12.0044264,89.1136951 L21.9544457,89.1136951 L21.9544457,79.2131783 L12.0044264,79.2131783 L12.0044264,89.1136951 L12.0044264,89.1136951 Z" id="Shape" fill="#6EB1E1"></path>
+                    <g id="Group" transform="translate(31.162791, 77.519380)" fill="#F1F3F7">
+                        <rect id="Rectangle-path" x="0.0373953488" y="0.0291989664" width="37.3348411" height="3.67984496"></rect>
+                        <rect id="Rectangle-path" x="0.0373953488" y="9.40387597" width="27.3848217" height="3.67984496"></rect>
+                    </g>
+                    <polygon id="Shape" fill="#EB7416" points="12.6209302 30.849354 17.1997829 37.2452196 27.2378372 25.9428941 17.1117481 34.6167959"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

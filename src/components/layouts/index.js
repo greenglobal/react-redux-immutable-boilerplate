@@ -1,3 +1,4 @@
-import MasterLayout from './master';
+import {MasterLayout} from './master';
+import {CommonLayout} from './common';
 
-export {MasterLayout};
+export {MasterLayout, CommonLayout};

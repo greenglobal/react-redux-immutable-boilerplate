@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from './Header.jsx';
+import Footer from './Footer.jsx';
 
-class MasterLayout extends React.Component {
+class CommonLayout extends React.Component {
 
   render() {
     const childrenWithProps = React.Children.map(this.props.children, (child) => React.cloneElement(child, {}));
@@ -11,13 +12,14 @@ class MasterLayout extends React.Component {
         <main className={this.props.defaultMainClass}>
           {childrenWithProps}
         </main>
+        <Footer/>
       </div>
     );
   }
 }
 
-MasterLayout.defaultProps = {
+CommonLayout.defaultProps = {
   defaultMainClass: ''
 }
 
-export default MasterLayout;
+export default CommonLayout;

@@ -1,4 +1,5 @@
 import React from 'react';
+import {RenderRoutes} from 'base/routes';
 class App extends React.Component {
   constructor() {
     super();
@@ -6,11 +7,11 @@ class App extends React.Component {
       count: 0,
     };
   }
- 
+
   render() {
     return (
-      <div className="wrapper">
-        {this.props.children}
+      <div>
+        <RenderRoutes routes={this.props.route.routes}/>
       </div>
     );
   }
