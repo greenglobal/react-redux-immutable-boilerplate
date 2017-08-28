@@ -174,7 +174,7 @@ module.exports = function (env) {
         ],
       },
       output: {
-        path: path.join(__dirname, '../build'),
+        path: path.join(__dirname, '../electron-boilerplate/build'),
         filename: 'bundle.js',
         publicPath: ''
       },
