@@ -13,51 +13,6 @@ const {
   API_URL
 } = config;
 
-var _module = {
-  rules: [
-    {
-      test: /\.(ico|jpg|jpeg|png|gif|eot|ttf|woff|svg)/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: 'images/[hash].[name].[ext]'
-          }
-        },
-        {
-          loader: 'image-webpack-loader',
-          options: {
-            bypassOnDebug: true,
-            // optimizationLevel: 7,
-
-            optipng: {
-              optimizationLevel: 7
-            },
-            gifsicle: {
-              interlaced: false,
-            }
-          }
-        }
-      ]
-    }, {
-      test: /\.(js|jsx)$/,
-      exclude: /(node_modules)/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['es2015', 'react', 'babel-preset-stage-3']
-      }
-    }, {
-      test: /\.(css)$/,
-      use: ExtractTextPlugin.extract({
-        fallback: "style-loader",
-        use: [{
-          loader: "css-loader"
-        }]
-      })
-    }
-  ],
-};
-
 var resolve = {
   extensions: [
     '*', '.js', '.json'
@@ -120,6 +75,59 @@ module.exports = function (env) {
     new webpack.NamedModulesPlugin()
   ];
 
+  let imageLoader = {
+    test: /\.(ico|jpg|jpeg|png|gif|eot|ttf|woff|svg)/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: {
+          name: 'images/[hash].[name].[ext]'
+        }
+      }
+    ]
+  };
+
+  let imageOptimizer = {
+    loader: 'image-webpack-loader',
+    options: {
+      bypassOnDebug: true,
+      // optimizationLevel: 7,
+
+      optipng: {
+        optimizationLevel: 7
+      },
+      gifsicle: {
+        interlaced: false,
+      }
+    }
+  };
+
+  if (isProd) {
+    imageLoader.use.push(imageOptimizer)
+  }
+
+  let _module = {
+    rules: [{
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react', 'babel-preset-stage-3']
+        }
+      }, {
+        test: /\.(css)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: [{
+            loader: "css-loader"
+          }]
+        })
+      }
+    ],
+  };
+
+  _module.rules.push(imageLoader);
+
   if (isProd) {
     plugins.push(
       new webpack.LoaderOptionsPlugin({
@@ -174,7 +182,7 @@ module.exports = function (env) {
         ],
       },
       output: {
-        path: path.join(__dirname, '../electron-boilerplate/build'),
+        path: path.join(__dirname, './build'),
         filename: 'bundle.js',
         publicPath: ''
       },
@@ -186,11 +194,11 @@ module.exports = function (env) {
             collapseWhitespace: true
           }
         }),
-        new CopyWebpackPlugin([
-          {
-            from: './lib-pdf/**/*'
-          }
-        ])
+        // new CopyWebpackPlugin([
+        //   {
+        //     from: './lib-pdf/**/*'
+        //   }
+        // ])
       ),
       performance: isProd && {
         //maxAssetSize: 100,

@@ -6,8 +6,8 @@ import * as API from 'api';
 let rootReducer = combineReducers(
   {
     routing,
-    ...API.Categories.reducers,
-    ...API.Users.reducers
+    // ...API.Categories.reducers,
+    // ...API.Users.reducers
   }
 );
 
